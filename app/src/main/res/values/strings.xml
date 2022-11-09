@@ -17,4 +17,15 @@
 
     <!--fragment_inicio-->
     <string name="bienvenidos">Bienvenidos a la APP de nuestro centro educativo</string>
+    <!--fragment_matricular/modificar-->
+    <string name="tv_matricula">MATRÍCULA DE UN NUEVO ALUMNO</string>
+    <string name="introduce_dni">Introduce el DNI</string>
+    <string name="introduce_nombre">Introduce el nombre</string>
+    <string name="introduce_apellidos">Introduce el apellidos</string>
+    <string name="bt_cancelar">Cancelar</string>
+    <string name="bt_aceptar">Aceptar</string>
+    <!--fragment_borrar-->
+    <string name="tv_borrar">BORRADOR DE UN ALUMNO</string>
+
+
 </resources>

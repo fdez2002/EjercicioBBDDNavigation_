@@ -24,8 +24,8 @@ public class ModificarFragment extends Fragment {
         binding = FragmentModificarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        modificarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //final TextView textView = binding.textSlideshow;
+        //modificarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

@@ -27,8 +27,8 @@ public class BorrarFragment extends Fragment {
         binding = FragmentBorrarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textViewBorrar;
-        borrarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        //final TextView textView = binding.textViewBorrar;
+        //borrarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
