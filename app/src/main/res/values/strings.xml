@@ -11,6 +11,7 @@
     <string name="menu_matricular">Matricular Alumno</string>
     <string name="menu_modificar">Modificar Alumno</string>
     <string name="menu_borrar">Borrar Alumno</string>
+    <string name="menu_listar">Listar Alumnos</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

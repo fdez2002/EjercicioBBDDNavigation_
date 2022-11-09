@@ -6,18 +6,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_inicio"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/inicio"
             android:title="@string/menu_inicio" />
         <item
             android:id="@+id/nav_matricular"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/anadir"
             android:title="@string/menu_matricular" />
         <item
             android:id="@+id/nav_modificar"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/editar"
             android:title="@string/menu_modificar" />
         <item
             android:id="@+id/nav_borrar"
+            android:icon="@drawable/borrar"
             android:title="@string/menu_borrar" />
     </group>
+    <item android:title="@string/menu_listar">
+        <menu>
+            <item
+                android:id="@+id/nav_AcercaDe"
+                android:icon="@drawable/listar"
+                android:title="@string/menu_listar" />
+        </menu>
+    </item>
 </menu>
