@@ -27,4 +27,9 @@
         android:name="com.example.ejerciciobbddnavigation.ui.borrar.BorrarFragment"
         android:label="@string/menu_borrar"
         tools:layout="@layout/fragment_borrar" />
+    <fragment
+        android:id="@+id/nav_listar"
+        android:name="com.example.ejerciciobbddnavigation.ui.listar.ListarFragment"
+        android:label="@string/menu_listar"
+        tools:layout="@layout/fragment_listar" />
 </navigation>

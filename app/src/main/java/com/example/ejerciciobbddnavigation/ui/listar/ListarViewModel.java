@@ -1,16 +1,16 @@
-package com.example.ejerciciobbddnavigation.ui.matricular;
+package com.example.ejerciciobbddnavigation.ui.listar;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MatricularViewModel extends ViewModel {
+public class ListarViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public MatricularViewModel() {
+    public ListarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Matricula");
+        mText.setValue("Lista");
     }
 
     public LiveData<String> getText() {

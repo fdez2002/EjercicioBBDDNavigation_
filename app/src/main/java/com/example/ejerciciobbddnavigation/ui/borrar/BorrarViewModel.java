@@ -10,7 +10,7 @@ public class BorrarViewModel extends ViewModel {
 
     public BorrarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Borrar");
     }
 
     public LiveData<String> getText() {

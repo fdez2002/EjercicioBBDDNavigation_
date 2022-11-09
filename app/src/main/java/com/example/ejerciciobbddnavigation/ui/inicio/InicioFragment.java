@@ -18,14 +18,14 @@ public class InicioFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        InicioViewModel homeViewModel =
+        InicioViewModel inicioViewModel =
                 new ViewModelProvider(this).get(InicioViewModel.class);
 
         binding = FragmentInicioBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-       //final TextView textView = binding.textViewBienvenidos;
-        //homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+       final TextView textView = binding.textViewBienvenidos;
+        inicioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

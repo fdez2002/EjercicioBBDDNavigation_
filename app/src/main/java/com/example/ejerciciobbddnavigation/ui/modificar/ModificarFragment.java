@@ -18,14 +18,14 @@ public class ModificarFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ModificarViewModel slideshowViewModel =
+        ModificarViewModel modificarViewModel =
                 new ViewModelProvider(this).get(ModificarViewModel.class);
 
         binding = FragmentModificarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        modificarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

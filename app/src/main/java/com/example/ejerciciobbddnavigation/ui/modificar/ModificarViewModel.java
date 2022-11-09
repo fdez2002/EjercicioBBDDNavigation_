@@ -10,7 +10,7 @@ public class ModificarViewModel extends ViewModel {
 
     public ModificarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("Modificar");
     }
 
     public LiveData<String> getText() {
