@@ -28,28 +28,29 @@
         android:ems="10"
         android:hint="@string/introduce_dni"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewBorrar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonAceptarBorrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="100dp"
-        android:text="Button"
+        android:text="@string/bt_aceptar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDni_borrar" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCancelarBorrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:text="@string/bt_cancelar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAceptarBorrar"
         app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDni_borrar" />

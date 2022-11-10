@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonAcept_matricula"
         app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner__matricula" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner__matriculaSexo" />
 
     <Button
         android:id="@+id/buttonAcept_matricula"
@@ -56,10 +56,11 @@
         android:layout_marginEnd="88dp"
         android:text="@string/bt_aceptar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner__matricula" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner__matriculaSexo" />
 
     <Spinner
-        android:id="@+id/spinner__matricula"
+        android:id="@+id/spinner__matriculaSexo"
+        android:entries="@array/sexo"
         android:layout_width="274dp"
         android:layout_height="53dp"
         android:layout_marginTop="4dp"

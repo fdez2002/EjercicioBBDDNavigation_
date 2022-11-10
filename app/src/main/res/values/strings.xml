@@ -27,5 +27,11 @@
     <!--fragment_borrar-->
     <string name="tv_borrar">BORRADOR DE UN ALUMNO</string>
 
+    <!--spinner-->
+    <string-array name="sexo">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+
 
 </resources>
