@@ -46,25 +46,34 @@ public class ModificarFragment extends Fragment {
         binding.buttonAccepModificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Lo primero que hacemos en este método es crear un objeto de la clase que planteamos anteriormente y
+                // le pasamos al constructor this (referencia del Activity actual), "administracion"
+                // (es el nombre de la base de datos que crearemos en el caso que no exista) luego pasamos null y
+                // un uno indicando que es la primer versión de la base de datos (en caso que cambiemos la estructura o agreguemos tablas
+                // por ejemplo podemos pasar un dos en lugar de un uno para que se ejecute el método onUpgrade donde indicamos la nuestra estructura
+                // de la base de datos)
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(thisContext, "administracion", null, 1);
-
+                // procedemos a crear un objeto de la clase SQLiteDataBase llamando al método getWritableDatabase
+                // (la base de datos se abre en modo lectura y escritura).
                 SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
+                //Guardamos en variables los nuevos datos que haya introducido el usuario
                 String dni = binding.editTextDniModificar.getText().toString();
                 String nombre = binding.editTextNombreModificar.getText().toString();
                 String apellidos = binding.editTextApellidosModificar.getText().toString();
                 String sexo = binding.spinnerModificar.getAdapter().toString();
-
+                //Comprobamos que esos datos no esten vacios
                 if(!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()){
+                    //Creamos un objeto de la clase ContentValues y mediante el método put inicializamos todos los campos a modificar.
                     ContentValues registro = new ContentValues();
-
+                    //
                     registro.put("dni", dni);
                     registro.put("nombre", nombre);
                     registro.put("apellidos", apellidos);
                     registro.put("sexo", sexo);
-
+                    //Luego se llama al método update de la clase SQLiteDatabase pasando el nombre de la tabla,
+                    // el objeto de la clase ContentValues y la condición del where (el cuanto parámetro en este ejemplo no se lo emplea)
                     int cantidad = BaseDeDatos.update("alumnos", registro, "dni="+dni, null);
-
+                    //Dependiendo del resultado de cantidad informamos al usuario
                     if (cantidad ==1){
                         Toast.makeText(thisContext, "Registro modificado correctamente", Toast.LENGTH_SHORT).show();
                     } else{
@@ -83,34 +92,5 @@ public class ModificarFragment extends Fragment {
         binding = null;
     }
 
-    public void Modificar(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(thisContext, "administracion", null, 1);
-
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
-        String dni = binding.editTextDniModificar.getText().toString();
-        String nombre = binding.editTextNombreModificar.getText().toString();
-        String apellidos = binding.editTextApellidosModificar.getText().toString();
-        String sexo = binding.spinnerModificar.getAdapter().toString();
-
-        if(!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()){
-            ContentValues registro = new ContentValues();
-
-            registro.put("dni", dni);
-            registro.put("nombre", nombre);
-            registro.put("apellidos", apellidos);
-            registro.put("sexo", sexo);
-
-            int cantidad = BaseDeDatos.update("alumnos", registro, "dni="+dni, null);
-
-            if (cantidad ==1){
-                Toast.makeText(thisContext, "Registro modificado correctamente", Toast.LENGTH_SHORT).show();
-            } else{
-                Toast.makeText(thisContext, "No existe el producto", Toast.LENGTH_SHORT).show();
-            }
-        } else{
-            Toast.makeText(thisContext, "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
-        }
-    }
  }
 

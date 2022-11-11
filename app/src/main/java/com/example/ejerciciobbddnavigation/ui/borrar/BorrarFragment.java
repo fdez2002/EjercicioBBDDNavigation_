@@ -48,24 +48,31 @@ public class BorrarFragment extends Fragment {
         binding.buttonAceptarBorrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Lo primero que hacemos en este método es crear un objeto de la clase que planteamos anteriormente y
+                // le pasamos al constructor this (referencia del Activity actual), "administracion"
+                // (es el nombre de la base de datos que crearemos en el caso que no exista) luego pasamos null y
+                // un uno indicando que es la primer versión de la base de datos (en caso que cambiemos la estructura o agreguemos tablas
+                // por ejemplo podemos pasar un dos en lugar de un uno para que se ejecute el método onUpgrade donde indicamos la nuestra estructura
+                // de la base de datos)
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(thisContext, "administracion", null, 1);
-
+                // procedemos a crear un objeto de la clase SQLiteDataBase llamando al método getWritableDatabase
+                // (la base de datos se abre en modo lectura y escritura).
                 SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
+                //obtenemos el dni que el usuario ha introducido y los guardamos en una variable
                 String dni = binding.editTextDniBorrar.getText().toString();
-
+                //comprobamos que se hayan introducido datos
                 if (!dni.isEmpty()){
                     int cantidad = BaseDeDatos.delete("alumnos", "dni="+dni, null);
-
+                    //cerramos la base de datos
                     BaseDeDatos.close();
-
+                    //informamos al usuario de lo que se ha realizado dependiendo del resultado de la cantidad
                     if (cantidad ==1){
                         Toast.makeText(thisContext, "Registro eliminado correctamente", Toast.LENGTH_SHORT).show();
                     } else{
                         Toast.makeText(thisContext, "No existe el alumno", Toast.LENGTH_SHORT).show();
                     }
                 }  else{
-                    Toast.makeText(thisContext, "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(thisContext, "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
                 }
 
 

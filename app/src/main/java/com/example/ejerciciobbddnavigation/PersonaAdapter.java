@@ -20,7 +20,7 @@ public class PersonaAdapter extends ArrayAdapter<Persona> {//Clase que extiende 
     private Context mContext;
     private int mresource;
     //private List<Persona> personalist;
-
+    //Constructor donde le pasamos el contexto, de donde obtiene los datos y el resource que va a ser el layout de cada item
     public PersonaAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Persona> objects) {
         super(context, resource, objects);
         this.mContext = context;
@@ -32,23 +32,23 @@ public class PersonaAdapter extends ArrayAdapter<Persona> {//Clase que extiende 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
+        //Instanciamos el archivo xml que le pasamos en el main
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
 
         convertView = layoutInflater.inflate(mresource, parent, false);
-
+        //Asignamos los elementos con el id del layaut pasado en el main
         TextView textDni = convertView.findViewById(R.id.textViewDniLista);
         TextView textNombre = convertView.findViewById(R.id.textViewNombreLista);
         TextView textApellidos = convertView.findViewById(R.id.textViewApellidosList);
         TextView textSexo = convertView.findViewById(R.id.textViewSexoList);
 
-
+        //Le asignamos los datos que va a tener la vista, con la posicion del elemento
         textDni.setText(getItem(position).getDni());
         textNombre.setText(getItem(position).getNombre());
         textApellidos.setText(getItem(position).getApellidos());
         textSexo.setText(getItem(position).getSexo());
 
 
-        return convertView;
+        return convertView;//Retornamos la vista
     }
 }

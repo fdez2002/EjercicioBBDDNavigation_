@@ -1,10 +1,10 @@
 package com.example.ejerciciobbddnavigation.objeto;
 
 public class Persona {
-    private String dni;
-    private String nombre;
-    private String apellidos;
-    private String sexo;
+    private String dni;//dni del alumno
+    private String nombre;//nombre del alumno
+    private String apellidos;//apellidos del alumno
+    private String sexo;//sexo del alumno
 
     public Persona() {
     }

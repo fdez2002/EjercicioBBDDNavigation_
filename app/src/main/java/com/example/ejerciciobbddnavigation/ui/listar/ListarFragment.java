@@ -51,17 +51,27 @@ public class ListarFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //Lo primero que hacemos en este método es crear un objeto de la clase que planteamos anteriormente y
+        // le pasamos al constructor this (referencia del Activity actual), "administracion"
+        // (es el nombre de la base de datos que crearemos en el caso que no exista) luego pasamos null y
+        // un uno indicando que es la primer versión de la base de datos (en caso que cambiemos la estructura o agreguemos tablas
+        // por ejemplo podemos pasar un dos en lugar de un uno para que se ejecute el método onUpgrade donde indicamos la nuestra estructura
+        // de la base de datos)
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(thisContext, "administracion", null, 1);
-
+        // procedemos a crear un objeto de la clase SQLiteDataBase llamando al método getReadableDatabase
         SQLiteDatabase baseDeDatos = admin.getReadableDatabase();
+        //Seguidamente definimos una variable de la clase Cursor y la inicializamos con el valor devuelto por el método llamado rawQuery.
         Cursor cursor = baseDeDatos.rawQuery("select * from alumnos", null);
 
         String dni, nombre, apellidos, sexo;
 
         listPersonas = new ArrayList<>();
-
+        //La clase Cursos almacena en este caso una fila o cero filas (una en caso que hayamos ingresado un dni existente en la tabla votantes),
+        // llamamos al método moveToFirst() de la clase Cursos y retorna true en caso de existir una persona con el dni ingresado,
+        // en caso contrario retorna cero.
         if (cursor.moveToFirst()){
             do{
+                //Recuperamos los datos con getString pasandole la posicion del campo a recuperar
                 dni = cursor.getString(0);
                 nombre = cursor.getString(1);
                 apellidos = cursor.getString(2);
@@ -70,10 +80,10 @@ public class ListarFragment extends Fragment {
             }while(cursor.moveToNext());
 
         }
+        //Creamos el adapter pasandole el context, el formato de lita  el arrau con el contenido
+        PersonaAdapter personadaptor = new PersonaAdapter(thisContext, R.layout.list_row, (ArrayList<Persona>) listPersonas);
 
-        PersonaAdapter personaadaptor = new PersonaAdapter(thisContext, R.layout.list_row, (ArrayList<Persona>) listPersonas);
-
-        binding.listView.setAdapter(personaadaptor);
+        binding.listView.setAdapter(personadaptor);
 
     }
 
