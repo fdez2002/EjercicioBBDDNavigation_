@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ejerciciobbddnavigation.PersonaAdapter;
 import com.example.ejerciciobbddnavigation.R;
 import com.example.ejerciciobbddnavigation.baseDeDatos.AdminSQLiteOpenHelper;
 import com.example.ejerciciobbddnavigation.databinding.FragmentListarBinding;
@@ -69,6 +70,10 @@ public class ListarFragment extends Fragment {
             }while(cursor.moveToNext());
 
         }
+
+        PersonaAdapter personaadaptor = new PersonaAdapter(thisContext, R.layout.list_row, (ArrayList<Persona>) listPersonas);
+
+        binding.listView.setAdapter(personaadaptor);
 
     }
 

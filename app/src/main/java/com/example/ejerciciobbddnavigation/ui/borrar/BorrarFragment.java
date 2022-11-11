@@ -62,7 +62,7 @@ public class BorrarFragment extends Fragment {
                     if (cantidad ==1){
                         Toast.makeText(thisContext, "Registro eliminado correctamente", Toast.LENGTH_SHORT).show();
                     } else{
-                        Toast.makeText(thisContext, "No existe el producto", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(thisContext, "No existe el alumno", Toast.LENGTH_SHORT).show();
                     }
                 }  else{
                     Toast.makeText(thisContext, "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
