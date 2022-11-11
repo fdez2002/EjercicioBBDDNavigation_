@@ -13,7 +13,9 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ejerciciobbddnavigation.PersonaAdapter;
 import com.example.ejerciciobbddnavigation.R;
@@ -84,6 +86,15 @@ public class ListarFragment extends Fragment {
         PersonaAdapter personadaptor = new PersonaAdapter(thisContext, R.layout.list_row, (ArrayList<Persona>) listPersonas);
 
         binding.listView.setAdapter(personadaptor);
+
+
+        //obtenemos mediante una pulsacion en los diferente elementos del listView el dni
+        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(thisContext, "Has pulsado: "+ listPersonas.get(position).getDni() ,  Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 

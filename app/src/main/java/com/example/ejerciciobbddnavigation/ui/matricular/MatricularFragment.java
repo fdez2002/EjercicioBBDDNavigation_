@@ -72,9 +72,7 @@ public class MatricularFragment extends Fragment {
                     //Cerramos el metodo
                     BaseDeDatos.close();
                     //Limpiamos los editText
-                    binding.editTextDniMatricula.setText("");
-                    binding.editTextNombreMatricula.setText("");
-                    binding.editTextApellidosMatricula.setText("");
+                    limpiar();
                     //Informamos al usuario de que los datos se hayn introducido correctamente
                     Toast.makeText(thisContext, "Alumno guardado correctamente", Toast.LENGTH_SHORT).show();
                 }else{
@@ -83,12 +81,26 @@ public class MatricularFragment extends Fragment {
                 }
             }
         });
+
+        binding.buttonCelcellMatricula.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                limpiar();
+            }
+        });
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void limpiar(){
+        binding.editTextDniMatricula.setText("");
+        binding.editTextNombreMatricula.setText("");
+        binding.editTextApellidosMatricula.setText("");
+
     }
 
 

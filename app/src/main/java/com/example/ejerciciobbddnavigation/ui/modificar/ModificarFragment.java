@@ -73,8 +73,10 @@ public class ModificarFragment extends Fragment {
                     //Luego se llama al método update de la clase SQLiteDatabase pasando el nombre de la tabla,
                     // el objeto de la clase ContentValues y la condición del where (el cuanto parámetro en este ejemplo no se lo emplea)
                     int cantidad = BaseDeDatos.update("alumnos", registro, "dni="+dni, null);
+                    limpiar();
                     //Dependiendo del resultado de cantidad informamos al usuario
                     if (cantidad ==1){
+
                         Toast.makeText(thisContext, "Registro modificado correctamente", Toast.LENGTH_SHORT).show();
                     } else{
                         Toast.makeText(thisContext, "No existe el alumno", Toast.LENGTH_SHORT).show();
@@ -84,12 +86,25 @@ public class ModificarFragment extends Fragment {
                 }
             }
         });
+
+        binding.buttonCacelModificar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                limpiar();
+            }
+        });
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void limpiar(){
+        binding.editTextDniModificar.setText("");
+        binding.editTextNombreModificar.setText("");
+        binding.editTextApellidosModificar.setText("");
     }
 
  }

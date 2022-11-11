@@ -62,7 +62,7 @@ public class BorrarFragment extends Fragment {
                 String dni = binding.editTextDniBorrar.getText().toString();
                 //comprobamos que se hayan introducido datos
                 if (!dni.isEmpty()){
-                    int cantidad = baseDeDatos.delete("alumnos", "dni="+dni+"", null);
+                    int cantidad = baseDeDatos.delete("alumnos", "dni='"+dni+"'", null);
                     //cerramos la base de datos
                     baseDeDatos.close();
                     //Limpiamos el editText
@@ -79,6 +79,13 @@ public class BorrarFragment extends Fragment {
 
 
 
+            }
+        });
+
+        binding.buttonCancelarBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editTextDniBorrar.setText("");
             }
         });
     }
