@@ -60,7 +60,7 @@ public class ModificarFragment extends Fragment {
                 String dni = binding.editTextDniModificar.getText().toString();
                 String nombre = binding.editTextNombreModificar.getText().toString();
                 String apellidos = binding.editTextApellidosModificar.getText().toString();
-                String sexo = binding.spinnerModificar.getAdapter().toString();
+                String sexo = binding.spinnerModificar.getSelectedItem().toString();
                 //Comprobamos que esos datos no esten vacios
                 if(!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()){
                     //Creamos un objeto de la clase ContentValues y mediante el método put inicializamos todos los campos a modificar.

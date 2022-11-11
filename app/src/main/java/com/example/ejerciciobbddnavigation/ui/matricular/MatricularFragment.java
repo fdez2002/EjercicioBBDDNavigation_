@@ -57,7 +57,7 @@ public class MatricularFragment extends Fragment {
                 String dni = binding.editTextDniMatricula.getText().toString();
                 String nombre = binding.editTextNombreMatricula.getText().toString();
                 String apellidos = binding.editTextApellidosMatricula.getText().toString();
-                String sexo = binding.spinnerMatriculaSexo.getAdapter().toString();
+                String sexo = binding.spinnerMatriculaSexo.getSelectedItem().toString();
                 //Creamos un objeto de la clase ContentValues y mediante el método put inicializamos todos los campos a cargar.
                 ContentValues registro = new ContentValues();
                 //Comprobamos antes  que los dtos no esten vacios

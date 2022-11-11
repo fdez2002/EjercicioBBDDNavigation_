@@ -33,5 +33,9 @@
         <item>Mujer</item>
     </string-array>
 
+    <!--list_Row-->
+    <string name="nombre">Nombre y Apellidos:</string>
+    <string name="sexo">Sexo:</string>
+    <string name="dni">D.N.I:</string>
 
 </resources>

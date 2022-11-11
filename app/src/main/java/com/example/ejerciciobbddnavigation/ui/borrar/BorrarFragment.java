@@ -57,14 +57,16 @@ public class BorrarFragment extends Fragment {
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(thisContext, "administracion", null, 1);
                 // procedemos a crear un objeto de la clase SQLiteDataBase llamando al método getWritableDatabase
                 // (la base de datos se abre en modo lectura y escritura).
-                SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+                SQLiteDatabase baseDeDatos = admin.getWritableDatabase();
                 //obtenemos el dni que el usuario ha introducido y los guardamos en una variable
                 String dni = binding.editTextDniBorrar.getText().toString();
                 //comprobamos que se hayan introducido datos
                 if (!dni.isEmpty()){
-                    int cantidad = BaseDeDatos.delete("alumnos", "dni="+dni, null);
+                    int cantidad = baseDeDatos.delete("alumnos", "dni="+dni+"", null);
                     //cerramos la base de datos
-                    BaseDeDatos.close();
+                    baseDeDatos.close();
+                    //Limpiamos el editText
+                    binding.editTextDniBorrar.setText("");
                     //informamos al usuario de lo que se ha realizado dependiendo del resultado de la cantidad
                     if (cantidad ==1){
                         Toast.makeText(thisContext, "Registro eliminado correctamente", Toast.LENGTH_SHORT).show();
