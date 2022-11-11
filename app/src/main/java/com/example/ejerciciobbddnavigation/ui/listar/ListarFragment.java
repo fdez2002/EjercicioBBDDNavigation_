@@ -82,6 +82,7 @@ public class ListarFragment extends Fragment {
             }while(cursor.moveToNext());
 
         }
+
         //Creamos el adapter pasandole el context, el formato de lita  el arrau con el contenido
         PersonaAdapter personadaptor = new PersonaAdapter(thisContext, R.layout.list_row, (ArrayList<Persona>) listPersonas);
 

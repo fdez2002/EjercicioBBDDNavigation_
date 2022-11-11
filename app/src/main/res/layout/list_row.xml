@@ -12,7 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/dni"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
         app:layout_constraintTop_toBottomOf="@+id/textViewDniIndo" />
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/nombre"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
         app:layout_constraintTop_toBottomOf="@+id/textViewDniLista" />
 
     <TextView
@@ -48,19 +48,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
         app:layout_constraintTop_toBottomOf="@+id/textViewNombreApeIndo" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewIcon"
         android:layout_width="83dp"
         android:layout_height="79dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/mujer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/anadir" />
 
     <TextView
         android:id="@+id/textViewSexoIndo"

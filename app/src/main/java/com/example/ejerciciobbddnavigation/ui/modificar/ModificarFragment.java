@@ -81,7 +81,7 @@ public class ModificarFragment extends Fragment {
                     //Luego se llama al método update de la clase SQLiteDatabase pasando el nombre de la tabla,
                     // el objeto de la clase ContentValues y la condición del where (el cuanto parámetro en este ejemplo no se lo emplea)
                     int cantidad = BaseDeDatos.update("alumnos", registro, "dni='"+dni+"'", null);
-                    limpiar();
+                    //limpiar();
                     //Dependiendo del resultado de cantidad informamos al usuario
                     if (cantidad ==1){
 

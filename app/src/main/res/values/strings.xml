@@ -9,7 +9,7 @@
 
     <string name="menu_inicio">Inicio</string>
     <string name="menu_matricular">Matricular Alumno</string>
-    <string name="menu_modificar">MODIFICAR Alumno</string>
+    <string name="menu_modificar">Modificar Alumno</string>
     <string name="menu_borrar">Borrar Alumno</string>
     <string name="menu_listar">Listar Alumnos</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -19,6 +19,7 @@
     <string name="bienvenidos">Bienvenidos a la APP de nuestro centro educativo</string>
     <!--fragment_matricular/modificar-->
     <string name="tv_matricula">MATRÍCULA DE UN NUEVO ALUMNO</string>
+    <string name="tv_modificar">MODIFICAR DE UN NUEVO ALUMNO</string>
     <string name="introduce_dni">Introduce el DNI</string>
     <string name="introduce_nombre">Introduce el nombre</string>
     <string name="introduce_apellidos">Introduce el apellidos</string>

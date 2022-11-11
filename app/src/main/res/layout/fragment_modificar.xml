@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:gravity="center"
-        android:text="@string/tv_matricula"
+        android:text="@string/tv_modificar"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"

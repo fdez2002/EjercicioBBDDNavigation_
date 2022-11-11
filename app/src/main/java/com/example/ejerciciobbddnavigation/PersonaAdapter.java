@@ -39,16 +39,23 @@ public class PersonaAdapter extends ArrayAdapter<Persona> {//Clase que extiende 
 
         convertView = layoutInflater.inflate(mresource, parent, false);
         //Asignamos los elementos con el id del layaut pasado en el main
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewIcon);
         TextView textDni = convertView.findViewById(R.id.textViewDniLista);
         TextView textNombre = convertView.findViewById(R.id.textViewNombreLista);
         TextView textApellidos = convertView.findViewById(R.id.textViewApellidosList);
         TextView textSexo = convertView.findViewById(R.id.textViewSexoList);
 
         //Le asignamos los datos que va a tener la vista, con la posicion del elemento
+
         textDni.setText(getItem(position).getDni());
         textNombre.setText(getItem(position).getNombre());
         textApellidos.setText(getItem(position).getApellidos());
         textSexo.setText(getItem(position).getSexo());
+        if(textSexo.getText().equals("Hombre")){
+            imageView.setImageResource(R.drawable.chico);
+        }else if(textSexo.getText().equals("Mujer")){
+            imageView.setImageResource(R.drawable.mujer);
+        }
 
 
 
