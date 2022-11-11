@@ -33,20 +33,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewModificar" />
 
     <EditText
-        android:id="@+id/editTextApellidos_modificar"
-        android:layout_width="274dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:hint="@string/introduce_apellidos"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDni_modificar" />
-
-    <EditText
         android:id="@+id/editTextNombre_modificar"
         android:layout_width="274dp"
         android:layout_height="wrap_content"
@@ -56,20 +42,33 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextApellidos_modificar" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDni_modificar" />
+
+    <EditText
+        android:id="@+id/editTextApellidos_modificar"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/introduce_apellidos"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombre_modificar" />
 
     <Spinner
         android:id="@+id/spinner_modificar"
-        android:entries="@array/sexo"
         android:layout_width="274dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
+        android:entries="@array/sexo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombre_modificar" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextApellidos_modificar" />
 
     <Button
         android:id="@+id/buttonCacel_modificar"

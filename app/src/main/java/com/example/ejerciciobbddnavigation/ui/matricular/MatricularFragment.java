@@ -23,6 +23,12 @@ public class MatricularFragment extends Fragment {
     private FragmentMatricularBinding binding;
     private Context thisContext;
 
+    private  boolean validarDni(String dni) {
+
+        return dni.matches("^[0-9]{7,8}[T|R|W|A|G|M|Y|F|P|D|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$");
+
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         thisContext = container.getContext();//guardamos en una variable el context para pasarlo al objeto
@@ -60,24 +66,28 @@ public class MatricularFragment extends Fragment {
                 String sexo = binding.spinnerMatriculaSexo.getSelectedItem().toString();
                 //Creamos un objeto de la clase ContentValues y mediante el método put inicializamos todos los campos a cargar.
                 ContentValues registro = new ContentValues();
-                //Comprobamos antes  que los dtos no esten vacios
-                if(!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()){
-                    registro.put("dni", dni);
-                    registro.put("nombre", nombre);
-                    registro.put("apellidos", apellidos);
-                    registro.put("sexo", sexo);
-                    //llamamos al método insert de la clase SQLiteDatabase pasando en el primer parámetro el nombre de la tabla,
-                    // como segundo parámetro un null y por último el objeto de la clase ContentValues ya inicializado
-                    BaseDeDatos.insert("alumnos", null, registro);
-                    //Cerramos el metodo
-                    BaseDeDatos.close();
-                    //Limpiamos los editText
-                    limpiar();
-                    //Informamos al usuario de que los datos se hayn introducido correctamente
-                    Toast.makeText(thisContext, "Alumno guardado correctamente", Toast.LENGTH_SHORT).show();
-                }else{
-                    //En el caso de que algun campo este vacio, lo informamos al usuario
-                    Toast.makeText(thisContext, "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
+                if(validarDni(dni) == false){
+                    Toast.makeText(thisContext, "El D.N.I es inválido", Toast.LENGTH_SHORT).show();
+                }else {
+                    //Comprobamos antes  que los datos no esten vacios
+                    if (!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()) {
+                        registro.put("dni", dni);
+                        registro.put("nombre", nombre);
+                        registro.put("apellidos", apellidos);
+                        registro.put("sexo", sexo);
+                        //llamamos al método insert de la clase SQLiteDatabase pasando en el primer parámetro el nombre de la tabla,
+                        // como segundo parámetro un null y por último el objeto de la clase ContentValues ya inicializado
+                        BaseDeDatos.insert("alumnos", null, registro);
+                        //Cerramos el metodo
+                        BaseDeDatos.close();
+                        //Limpiamos los editText
+                        limpiar();
+                        //Informamos al usuario de que los datos se hayn introducido correctamente
+                        Toast.makeText(thisContext, "Alumno guardado correctamente", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //En el caso de que algun campo este vacio, lo informamos al usuario
+                        Toast.makeText(thisContext, "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

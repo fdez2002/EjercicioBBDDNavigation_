@@ -22,6 +22,13 @@ public class ModificarFragment extends Fragment {
 
     private FragmentModificarBinding binding;
     private Context thisContext;
+    //comprobamos el dni
+    private  boolean validarDni(String dni) {
+
+        return dni.matches("^[0-9]{7,8}[T|R|W|A|G|M|Y|F|P|D|D|X|B|N|J|Z|S|Q|V|H|L|C|K|E]$");
+
+    }
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -61,6 +68,7 @@ public class ModificarFragment extends Fragment {
                 String nombre = binding.editTextNombreModificar.getText().toString();
                 String apellidos = binding.editTextApellidosModificar.getText().toString();
                 String sexo = binding.spinnerModificar.getSelectedItem().toString();
+
                 //Comprobamos que esos datos no esten vacios
                 if(!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()){
                     //Creamos un objeto de la clase ContentValues y mediante el método put inicializamos todos los campos a modificar.
@@ -72,7 +80,7 @@ public class ModificarFragment extends Fragment {
                     registro.put("sexo", sexo);
                     //Luego se llama al método update de la clase SQLiteDatabase pasando el nombre de la tabla,
                     // el objeto de la clase ContentValues y la condición del where (el cuanto parámetro en este ejemplo no se lo emplea)
-                    int cantidad = BaseDeDatos.update("alumnos", registro, "dni="+dni, null);
+                    int cantidad = BaseDeDatos.update("alumnos", registro, "dni='"+dni+"'", null);
                     limpiar();
                     //Dependiendo del resultado de cantidad informamos al usuario
                     if (cantidad ==1){
